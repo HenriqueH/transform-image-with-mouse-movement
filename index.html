@@ -1,0 +1,11 @@
+<img src='http://i.imgur.com/LbmivXh.png' style='transition:transform 0.5s ease;'/>
+<script>
+var image = document.getElementsByTagName('img')[0];
+image.addEventListener('mousemove', function action(e){
+	if (!e) e = window.event;
+	var x = (e.clientX - (image.clientWidth / 2)) / 2,
+		y = ((image.clientHeight / 2) - e.clientY) / 2;
+	image.style.webkitTransform = 'perspective(1000) rotateY(' + x / 10 + 'deg) rotateX(' + y / 10 + 'deg)';
+	document.getElementsByTagName('input')[0].value= 'X:' + x + ' Y:' + y;
+}, true);
+</script>
